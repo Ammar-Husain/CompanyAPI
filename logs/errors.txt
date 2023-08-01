@@ -1,0 +1,62 @@
+29/07/23	19:54:18	/employees/	SyntaxError: Unexpected token '"', "#" is not valid JSON	91bb0e67-f420-4fb3-96ca-94307b1b74a5
+29/07/23	19:54:20	/employees/	SyntaxError: Unexpected token '"', "#" is not valid JSON	6586cb26-651c-452a-9409-1ae89b46f937
+29/07/23	19:55:13	/employees/	SyntaxError: Unexpected token '"', "#" is not valid JSON	365eb212-941c-4e9d-9603-ae4c61ac7784
+29/07/23	19:56:50	/employees/	SyntaxError: Unexpected token '"', "#" is not valid JSON	c0482783-05f2-420b-a54f-7bd3ba8ae5af
+29/07/23	19:56:59	/employees/	SyntaxError: Unexpected token '"', "#" is not valid JSON	cca0f228-6900-48fb-9292-a111b1ef9b54
+29/07/23	19:58:22	/employees/	SyntaxError: Unexpected token '"', "#" is not valid JSON	cd609a6a-f3a8-4cc3-8438-f9315e7fcf30
+29/07/23	19:59:00	/employees/	SyntaxError: Unexpected token '"', "#" is not valid JSON	7fb91159-2794-412d-8cfd-c89ab678da0a
+29/07/23	21:30:44	/employees/	SyntaxError: Unterminated string in JSON at position 43	537a2018-24da-4f31-9f43-30d180395933
+29/07/23	21:30:55	/employees/	SyntaxError: Unterminated string in JSON at position 43	6d03fd8d-18d2-4d39-98be-3a146c8d0eb8
+30/07/23	05:46:09	/employees/	SyntaxError: Expected ',' or '}' after property value in JSON at position 9	eb795e5a-8c0f-47b3-a431-c09b900ac5b3
+30/07/23	05:49:21	/employees/	SyntaxError: Expected ',' or '}' after property value in JSON at position 9	9f7e6ddb-520b-4c57-97eb-ddd2e628321e
+30/07/23	05:49:25	/employees/	SyntaxError: Expected ',' or '}' after property value in JSON at position 9	35fea1cb-9585-4e32-851e-2c8347947a2a
+30/07/23	05:54:31	/employees/	SyntaxError: Expected ',' or '}' after property value in JSON at position 9	f10a5ae2-c09f-4a7f-90b3-b5c82010e204
+30/07/23	05:55:00	/employees/	SyntaxError: Expected ',' or '}' after property value in JSON at position 9	dc44f56c-ed6a-49eb-b1ae-4a8cbfd8aa5c
+30/07/23	05:55:57	/employees/	SyntaxError: Expected ',' or '}' after property value in JSON at position 9	11288c6c-dbb8-428f-b634-5e51f5008d4b
+30/07/23	05:56:33	/employees/	SyntaxError: Expected ',' or '}' after property value in JSON at position 9	a41ab295-06f2-44e3-a3eb-1207c86f2cfc
+30/07/23	05:58:54	/employees/	SyntaxError: Expected ',' or '}' after property value in JSON at position 9	027ecaaf-4fe7-4c48-8ff5-c131c2f8e4fb
+30/07/23	06:45:58	/employees/	SyntaxError: Expected ',' or '}' after property value in JSON at position 10	c036091d-989b-4757-99ae-dc1462948fba
+30/07/23	13:05:16	/employees/	SyntaxError: Unexpected token 'b', "{"id": bb744f50-b"... is not valid JSON	cf75fdc9-78f2-4f3a-8295-c877c0428199
+30/07/23	13:05:34	/employees/	SyntaxError: Unexpected token 'b', "{"id": bb744f50-b"... is not valid JSON	0dd4a0e8-5fd3-4508-b7d2-4ac32ce6aa4a
+30/07/23	13:07:09	/employees/	SyntaxError: Unexpected token 'b', "{"id": bb744f50-b"... is not valid JSON	b19a8bea-c7c6-499c-a8ac-c40e7fbc3739
+31/07/23	05:55:23	/login/	SyntaxError: Unexpected token " in JSON at position 0	b33f0514-5952-48fd-817b-1c764332be23
+31/07/23	06:00:10	/register/	SyntaxError: Unexpected token u in JSON at position 1	61b920e0-ae26-4e1e-8de3-9dec3552c804
+31/07/23	06:00:53	/login/	SyntaxError: Unexpected token " in JSON at position 0	6b653757-3eb0-478a-8277-a2b974fe269d
+31/07/23	10:41:52	/employees/	Error: no Permissions	391f37d2-65cb-4704-9299-be85dc1cd15f
+31/07/23	10:41:53	/employees/	Error: no Permissions	3b0d7019-e4f9-4dbe-a1bf-e3859d428403
+31/07/23	10:41:54	/employees/	Error: no Permissions	0a36beec-3e78-4d5d-a0d7-449956ba2dfc
+31/07/23	10:41:54	/employees/	Error: no Permissions	9def41e7-ab19-432e-ac41-ff530e15725e
+31/07/23	10:41:55	/employees/	Error: no Permissions	e18bc98f-2424-48c1-b941-3cd968a2e846
+31/07/23	10:41:56	/employees/	Error: no Permissions	eadfeed9-5929-4d05-a2e4-d51f6219d711
+31/07/23	10:41:56	/employees/	Error: no Permissions	f8873b98-a176-49e7-9b55-d0b15b11e009
+31/07/23	10:42:06	/employees/	Error: no Permissions	24786361-a021-46fd-b9f4-86fe95939045
+31/07/23	10:42:07	/employees/	Error: no Permissions	4c5f16ea-811b-41cf-b0d2-a0b0ddd06f86
+31/07/23	10:42:07	/employees/	Error: no Permissions	7e897b52-e730-4722-a983-30facdcdbc86
+31/07/23	10:42:07	/employees/	Error: no Permissions	8defa9b7-d084-4bf3-b0fd-6bf5e58c2f4a
+31/07/23	10:57:56	/employees/	Error: no Permissions	f58312d8-ad3f-4000-aaf7-deb984cbf860
+31/07/23	10:57:57	/employees/	Error: no Permissions	e68eac13-a96a-435a-8c21-73337cedfa11
+31/07/23	10:58:03	/employees/	Error: no Permissions	21cbe7d6-3cbc-4a35-bf50-05efaf7fdf93
+31/07/23	10:58:05	/employees/	Error: no Permissions	bc018010-9909-49d5-bfa7-00b59fda2fd2
+31/07/23	10:58:09	/employees/	Error: no Permissions	a2194ad9-b5e8-4c62-aa8e-5623385c93d8
+31/07/23	10:58:57	/employees/	Error: no Permissions	9b66eaa3-5870-4b39-a38c-f513b9e5899c
+31/07/23	10:58:58	/employees/	Error: no Permissions	62882bdf-ce20-4de3-8173-867560b0b361
+31/07/23	10:58:58	/employees/	Error: no Permissions	1d131340-44da-4434-ba74-0de25ce74eec
+31/07/23	10:59:00	/employees/	Error: no Permissions	dc376120-134b-4157-a84b-411afd459ec6
+31/07/23	10:59:38	/employees/	Error: no Permissions	37afedc4-d2ef-4098-a334-ebd7f621a7d2
+31/07/23	12:14:26	/refresh/	Error: Cannot set headers after they are sent to the client	d28cc308-da27-4f8f-8300-1da063771545
+31/07/23	12:17:42	/refresh/	Error: Cannot set headers after they are sent to the client	dec2d3c5-58d5-40e8-a4aa-2d64eda50557
+31/07/23	12:21:01	/refresh/	Error: Cannot set headers after they are sent to the client	0797a0a0-50b9-4369-84f8-1566b4e8c113
+31/07/23	12:21:47	/refresh/	Error: Cannot set headers after they are sent to the client	d48c71dd-504f-427a-8cc0-c9d2139ad38d
+31/07/23	12:22:26	/refresh/	Error: Cannot set headers after they are sent to the client	95c62bf7-121d-4cd9-8b68-418ed97921ee
+31/07/23	12:22:40	/refresh/	Error: Cannot set headers after they are sent to the client	a0f9bfff-d45c-455c-a6bd-8e6b311ced4b
+31/07/23	12:23:21	/refresh/	Error: Cannot set headers after they are sent to the client	589459c4-348f-4e7c-b615-3998e3e4f7b0
+31/07/23	12:24:47	/refresh/	Error: Cannot set headers after they are sent to the client	17466362-a9b5-4adc-ba63-46e740548709
+31/07/23	12:26:38	/refresh/	Error: Cannot set headers after they are sent to the client	43d6c1ad-71c3-4d4d-82c9-8b9984d9b2fe
+31/07/23	12:28:48	/refresh/	Error: Cannot set headers after they are sent to the client	3bf8a0ac-a851-420b-bb35-66e06accd32f
+31/07/23	12:29:49	/refresh/	Error: Cannot set headers after they are sent to the client	ef319aca-347a-4aaa-b9c1-9c7a2081a330
+31/07/23	12:32:56	/refresh/	Error: Cannot set headers after they are sent to the client	c624a0ad-4145-4635-8c9d-32ec48c73e52
+31/07/23	12:34:35	/refresh/	TypeError: Cannot read properties of undefined (reading 'jwt')	1f6b64d9-79d6-4a71-92be-c54940bf9853
+31/07/23	15:06:04	/refresh/	ReferenceError: user is not defined	f1c30445-edbc-43be-9428-f44808ceeb17
+31/07/23	15:06:05	/refresh/	ReferenceError: user is not defined	11c32715-a65e-4b51-8e1a-2327b2978399
+01/08/23	10:43:53	/employees/	ReferenceError: cosole is not defined	9d833833-a5d9-48f9-ba59-087744879a6c
+01/08/23	10:44:09	/employees/	TypeError: Cannot read properties of undefined (reading 'jwt')	3da503ea-6d10-4a72-ac0b-f5ba08ee1075
