@@ -23,8 +23,9 @@ const handleLogin = async (req, res) => {
 		const isMatch = await bcrypt.compare(password, user.password)
 		if (isMatch) {
 			// creat jwts
+			const userRoles = Object.values(user.roles)
 			const accessToken = jwt.sign(
-				{username: user.username},
+				{username: user.username, roles: userRoles},
 				process.env.ACCESS_TOKEN_SECRET,
 				{expiresIn: '30m'}
 			)
@@ -37,7 +38,8 @@ const handleLogin = async (req, res) => {
 				user.username === username ? {...user, refreshToken}: user	
 			))
 			await fsp.writeFile(dataFile, JSON.stringify(data.users, null, 2))
-			res.cookie('jwt', refreshToken, {httpOnly: true, sameSite: 'none', secure: false})		
+			console.log(process.env.MODE !== 'dev')
+			res.cookie('jwt', refreshToken, {httpOnly: true, sameSite: 'None', secure: process.env.MODE !== 'dev'})		
 			res.header('Access-Control-Allow-Credentials', true)
 			return res.json({accessToken, refreshToken})
 		} else {

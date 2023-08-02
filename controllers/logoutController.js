@@ -18,7 +18,7 @@ const logoutHandler = async (req, res) => {
 			user.username === username ? {...user, refreshToken: null}:user	
 		))
 		await fsp.writeFile(dataFile, JSON.stringify(updatedData, null, 2))
-		res.clearCookie('jwt', {httpOnly: true, sameSite: 'none', secure: false})
+		res.clearCookie('jwt', {httpOnly: true, sameSite: 'None', secure: process.env.MODE !== 'dev'})
 		res.json({message: `Succefully logged out, See you later ${username}`})
 	} catch(err) {
 		console.error(err)

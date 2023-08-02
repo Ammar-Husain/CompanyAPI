@@ -2,12 +2,11 @@ const jwt = require('jsonwebtoken')
 require('dotenv').config()
 
 const verifyJWTs = async (req, res, next) => {
-	console.log(req.headers.authorization)
 	let {authorization} = req.headers
 	try {
-		console.log(authorization)
 		const decoded = jwt.verify(authorization, process.env.ACCESS_TOKEN_SECRET)
 		req.user = decoded.username
+		req.roles = decoded.roles
 		console.log('JWT verified')
 		next()
 	} catch(err) {
