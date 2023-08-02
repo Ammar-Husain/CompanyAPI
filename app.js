@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const path = require ('path')
 const cors = require('cors')
@@ -20,14 +21,14 @@ app.use(cors(corsOptions))
 
 app.use(cookieParser())
 
-
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
 
 
-app.use('/register', registerRouter)
 app.use('/login', authRouter)
 app.use('/refresh', refreshRouter)
+app.use('/register', registerRouter)
+
 
 app.use(verifyJWTs)
 
@@ -38,7 +39,8 @@ app.use((req, res) => {
 	res.json({error: '404 not found', url: req.url})
 })
 
+const PORT = process.env.PORT || 3500
 app.use(errorslogger)
-app.listen('3500', () => {
-	console.log('server run on port 3500')
+app.listen(PORT, () => {
+	console.log(`server run on port ${PORT}`)
 })
