@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const User = require('../model/User')
+const bcrypt = require('bcryptjs')
 
 const updateUser = async (req, res) => {
 	const id = req.params.id || req.body.id
@@ -25,6 +26,9 @@ const updateUser = async (req, res) => {
 		}
 	}
 	try {
+		if (updatedUser.password) {
+			updatedUser.password = await bcrypt.hash(updatedUser.password, 10)
+		}
 		await User.updateOne({_id: id}, {...updatedUser})
 		const result = await User.findOne({_id: id}).exec()
 		res.json(result)

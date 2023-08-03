@@ -13,23 +13,23 @@ const verifyJWTs = require('../../middlewares/verifyJWTs.js')
 const verifyRoles = require('../../middlewares/verifyRoles')
 const ROLES_LIST = require('../../configs/roles_list')
 
+router.get('/refresh', refreshTokenHandler)
 router.get('/', verifyJWTs,  verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), getAllUsers)
 router.get('/:id', verifyJWTs, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), getAUser)
 router.post('/register', adminizeTheFirstUser)
 router.post('/register', verifyJWTs, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), addNewUser)
 router.post('/login', handleLogin)
-router.get('/refresh', refreshTokenHandler)
 router.post('/logout', verifyJWTs,  logoutHandler)
 
-router.delete('/', verifyJWTs, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), deleteUser)
 router.delete('/delete', verifyJWTs, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), deleteUser)
-router.delete('/:id', verifyJWTs, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), deleteUser)
+router.delete('/', verifyJWTs, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), deleteUser)
 router.delete('/delete/:id', verifyJWTs, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), deleteUser)
+router.delete('/:id', verifyJWTs, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), deleteUser)
 
-router.put('/', verifyJWTs, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), updateUser)
 router.put('/update', verifyJWTs, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), updateUser)
-router.put('/:id', verifyJWTs, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), updateUser)
+router.put('/', verifyJWTs, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), updateUser)
 router.put('/update/:id', verifyJWTs, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), updateUser)
+router.put('/:id', verifyJWTs, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), updateUser)
 
 
 module.exports = router

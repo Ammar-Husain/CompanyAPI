@@ -9,7 +9,7 @@ router.use('/', (req, res, next) => {
 })
 router.route('/')
 	.get(employeesControllers.getAllEmployees)
-	.post(verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin,  ROLES_LIST.Editor), employeesControllers.addAnEmployee)
+	.post(employeesControllers.addAnEmployee)
 	.put(verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin, ROLES_LIST.Editor), employeesControllers.updateAnEmployee)
 	.delete(verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), employeesControllers.deleteAnEmployee)
 	
