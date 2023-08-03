@@ -1,9 +1,8 @@
-const path = require('path')
-const fsp = require('fs').promises
-
+const mongoose = require('mongoose')
+const User = require('../model/User')
+const addNewUser = require('../controllers/registerController')
 const adminizeTheFirstUser = async (req, res, next) => {
-	const jsonData = await fsp.readFile(path.join(__dirname, '..', 'model', 'users.json'))
-	const users = JSON.stringify(jsonData)
+	const users = await User.find().exec()
 	if (!users.length) addNewUser(req, res)
 	else next()
 }

@@ -1,19 +1,20 @@
+const path = require ('path')
 require('dotenv').config()
 const express = require('express')
-const path = require ('path')
+const mongoose = require('mongoose')
+connectToMongo = require(path.join(__dirname, 'configs', 'connectToMongo'))
 const cors = require('cors')
 const corsOptions = require('./configs/corsOptions')
 const cookieParser = require('cookie-parser')
-const {eventslogger} = require(path.join(__dirname, 'middlewares', 'logEvents.js'))
-const {errorslogger} = require(path.join(__dirname, 'middlewares', 'logEvents.js'))
-const verifyJWTs = require(path.join(__dirname, 'middlewares', 'verifyJWTs.js'))
-const handleOptionsRequests = require(path.join(__dirname, 'middlewares', 'handleOptionsRequests.js'))
-const employeesRouter = require(path.join(__dirname, 'routes', 'api', 'employees.js'))
-const registerRouter = require(path.join(__dirname, 'routes', 'api', 'register.js'))
-const authRouter = require(path.join(__dirname, 'routes', 'api', 'auth.js'))
-const logoutRouter = require(path.join(__dirname, 'routes', 'api', 'logout.js'))
-const refreshRouter = require(path.join(__dirname, 'routes', 'api', 'refreshToken.js'))
+const {eventslogger} = require(path.join(__dirname, 'middlewares', 'logEvents'))
+const {errorslogger} = require(path.join(__dirname, 'middlewares', 'logEvents'))
+const verifyJWTs = require(path.join(__dirname, 'middlewares', 'verifyJWTs'))
+const handleOptionsRequests = require(path.join(__dirname, 'middlewares', 'handleOptionsRequests'))
+const employeesRouter = require(path.join(__dirname, 'routes', 'api', 'employees'))
+const usersRouter = require(path.join(__dirname, 'routes', 'api', 'users'))
+
 const app = express()
+connectToMongo()
 
 app.use(eventslogger)
 app.use(handleOptionsRequests)
@@ -24,15 +25,10 @@ app.use(cookieParser())
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
 
-
-app.use('/login', authRouter)
-app.use('/refresh', refreshRouter)
-app.use('/register', registerRouter)
-
+app.use('/users', usersRouter)
 
 app.use(verifyJWTs)
 
-app.use('/logout', logoutRouter)
 app.use('/employees', employeesRouter)
 
 app.use((req, res) => {
@@ -41,6 +37,10 @@ app.use((req, res) => {
 
 const PORT = process.env.PORT || 3500
 app.use(errorslogger)
-app.listen(PORT, () => {
-	console.log(`server run on port ${PORT}`)
+
+mongoose.connection.once('open', () => {
+	console.log('connected to MongoDB')
+	app.listen(PORT, () => {
+		console.log(`server run on port ${PORT}`)
+	})
 })

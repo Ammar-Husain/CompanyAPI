@@ -1,17 +1,14 @@
 const path = require('path')
-const fsp = require('fs').promises
 const jwt = require('jsonwebtoken')
-require('dotenv').config()
+const mongoose = require('mongoose')
+const User = require(path.join(__dirname, '..', 'model', 'User'))
 
-const data = {}
 const refreshTokenHandler = async (req, res) => {
 	console.log(req.cookies)
-	jsonData = await fsp.readFile(path.join(__dirname, '..', 'model', 'users.json'))
-	data.users = JSON.parse(jsonData)
 	if (!req.cookies || !req.cookies.jwt) {
 		return res.status(401).json({mesage: 'no refresh token available log in to get one'})
 	} 
-	const user = data.users.find(user => user.refreshToken === req.cookies.jwt)
+	const user = await User.findOne({refreshToken : req.cookies.jwt}).exec()
 	if(!user) {
 		return res.status(403).json({message: 'invalid refresh token'})
 	}

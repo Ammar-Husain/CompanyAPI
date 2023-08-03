@@ -7,7 +7,7 @@ const UserSchema = new Schema({
 		required: true
 	},
 	password: {
-		type: Sting,
+		type: String,
 		required: true
 	},
 	roles: {
@@ -18,7 +18,8 @@ const UserSchema = new Schema({
 		Editor: Number,
 		Admin: Number,
 		SuperAdmin: Number
-	}
+	},
+	refreshToken: String
 })
 
 module.exports = mongoose.model('User', UserSchema)
