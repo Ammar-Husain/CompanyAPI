@@ -6,12 +6,14 @@ const jwt = require('jsonwebtoken')
 
 const handleLogin = async (req, res) => {
 	let { username, password } = req.body
-	if (!username || !password) {
-		return res.status(400).json({ error: 'both username and password required' })
+	if (!username) {
+		return res.status(400).json({ message: 'username required' })
+	} else if(!password) {
+		return res.status(400).json({ message: 'password required' })
 	}
 	try {
 		let user = await User.findOne({username}).exec()
-		if (!user) return res.status(400).json({error: `no user with this username ${username}`})
+		if (!user) return res.status(400).json({ message: `no user with this username "${username}" found`})
 		const isMatch = await bcrypt.compare(password, user.password)
 		if (isMatch) {
 			// creat jwts
@@ -19,22 +21,22 @@ const handleLogin = async (req, res) => {
 			const accessToken = jwt.sign(
 				{username: user.username, roles: userRoles},
 				process.env.ACCESS_TOKEN_SECRET,
-				{expiresIn: '30m'}
+				{expiresIn: '15m'}
 			)
 			const refreshToken = jwt.sign(
 				{username: user.username},
 				process.env.REFRESH_TOKEN_SECRET,
 				{expiresIn: '1d'}
 			)
-			await User.updateOne({username}, {refreshToken})
+			await User.updateOne({username}, {refreshToken, lastActiveTime: 'now'})
 			res.cookie('jwt', refreshToken, {httpOnly: true, sameSite: 'None', secure: process.env.MODE !== 'dev'})		
-			return res.json({accessToken, refreshToken})
+			return res.json({accessToken, user})
 		} else {
-			return res.status(400).json({'message': 'wrong password try again'})
+			return res.status(400).json({message: 'wrong password try again'})
 		}
  	} catch (err) {
 		console.error(err)
-		res.status(500).json({ error: `system error\t${err.name}: ${err.message}` })
+		res.status(500).json({message: `System error. Try again later` })
 	}
 }
 

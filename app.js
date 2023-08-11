@@ -32,14 +32,13 @@ app.use(verifyJWTs)
 app.use('/employees', employeesRouter)
 
 app.use((req, res) => {
-	res.json({error: '404 not found', url: req.url})
+	res.json({ message: '404 not found', url: req.url})
 })
 
 const PORT = process.env.PORT || 3500
 app.use(errorslogger)
 
 mongoose.connection.once('open', () => {
-	console.log('connected to MongoDB')
 	app.listen(PORT, () => {
 		console.log(`server run on port ${PORT}`)
 	})
