@@ -15,7 +15,7 @@ myEmitter.on('log', async (data, file) => {
 		if(!fs.existsSync(path.join(__dirname, '..', 'logs', file))) {
 			await fsp.writeFile(path.join(__dirname, '..', 'logs', file), '')
 		}
-		const dateTime = format(new Date, 'dd/MM/yy\tHH:mm:ss')
+		const dateTime = format(new Date, 'MM/dd/yyyy\tHH:mm:ss')
 		const id = uuid()
 		const newLog = `${dateTime}\t${data}\t${id}\n`
 		await fsp.appendFile(path.join(__dirname, '..', 'logs', file), newLog)
@@ -32,7 +32,7 @@ const errorslogger = (err, req, res) => {
 	console.error(err.stack)
 	myEmitter.emit('log', `${req.url}\t${err.name}: ${err.message}`, 'errors.txt')
 	// res.status(500).send(err.message)
-	res.json({error: `${err.name}: ${err.message}`})
+	res.json({ message: `${err.name}: ${err.message}`})
 }
 
 module.exports = {eventslogger, errorslogger}

@@ -10,12 +10,12 @@ router.use('/', (req, res, next) => {
 router.route('/')
 	.get(employeesControllers.getAllEmployees)
 	.post(employeesControllers.addAnEmployee)
-	.put(verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin, ROLES_LIST.Editor), employeesControllers.updateAnEmployee)
-	.delete(verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin), employeesControllers.deleteAnEmployee)
+	.put(employeesControllers.updateAnEmployee)
+	.delete(verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin, ROLES_LIST.Editor), employeesControllers.deleteAnEmployee)
 	
 router.route('/:id')
 	.get(employeesControllers.getAnEmployee)
-	.put(verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin, ROLES_LIST.Editor), employeesControllers.updateAnEmployee)
-	.delete(verifyRoles(ROLES_LIST.Admin), employeesControllers.deleteAnEmployee)
+	.put(employeesControllers.updateAnEmployee)
+	.delete(verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Super_Admin, ROLES_LIST.Editor), employeesControllers.deleteAnEmployee)
 	
 module.exports = router

@@ -11,7 +11,7 @@ const verifyJWTs = async (req, res, next) => {
 		next()
 	} catch(err) {
 		console.log(`${err.name}: ${err.message}`)
-		res.status(401).json({error: 'Un authorized', message: 'log in first'})
+		res.status(401).json({ message: 'Un authorized', message: 'log in first'})
 	}
 }
 
