@@ -9,7 +9,11 @@ const handleOptionsRequests = (req, res, next) => {
   // Handle the OPTIONS preflight request
   res.setHeader('Access-Control-Allow-Credentials', true);
   // Handle the OPTIONS preflight request
+  if (req.method === 'OPTIONS') {
     res.sendStatus(200);
+  } else {
+  	next()
+  }
 };
 
 module.exports = handleOptionsRequests
