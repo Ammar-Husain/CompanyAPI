@@ -8,4 +8,5 @@ const corsOptions = {
 	optionsSuccessesStatus: 200,
 }
 
+
 module.exports = corsOptions
