@@ -1,19 +1,29 @@
 This is Company Mnagement System API use Expressjs and MongoDB as database
 
-Users roles:
+## Documentation
 
-1. Super Admin (code 2004): Can do all CRUD operations in all users and employees, There can be just one suprAdmin the first user will be super admin automatically and he can not delete his account except he create another user and make him super admin and if make another user super admin his role will be set to Admin automatically
+### Users roles:
 
-2. Admin (code 2002): Can do all CRUD operations in all employees and users that are not admins or the super sdmin.
+##### 1. Super Admin (code 2004):
+Can do all CRUD operations in all users and employees, There can be just one suprAdmin the first user will be super admin automatically and he can not delete his account except he create another user and make him super admin and if make another user super admin his role will be set to Admin automatically
 
-3. Editor (code 2000): Can do all CRUD operations in all employees.
+##### 2. Admin (code 2002):
+Can do all CRUD operations in all employees and users that are not admins or the super sdmin.
 
-4. User (code 1998): Can do all CRUD operations in all employees except deleteing.
+##### 3. Editor (code 2000):
+Can do all CRUD operations in all employees.
+
+##### 4. User (code 1998):
+Can do all CRUD operations in all employees except deleteing.
 
 
-for the fields of the user document and employee document see the User and Employee Schemas in the model directory 
+```markdown
+|      Note      |
+|:-------------:|
+| For the fields of the user document and employee document see the User and Employee Schemas in the model directory . |
+```
 
-Available routes:
+### Available routes:
 
 ```markdown
 |      Note      |
@@ -21,9 +31,7 @@ Available routes:
 | For all routes except the login, refresh and register (if there is no users) the user must be loggedin and the authorization header must contain the jwt access token. |
 ```
 
-Note: 
-
-1. /users routes:
+#### /users routes:
 
 1. /users/login POST: request body must contain username and password and the response will contain the access jwt token and the user document and the refrsh jwt token will be added to the user document and to the cookie 'jwt'.
 
@@ -210,7 +218,7 @@ fetch('https://company-managing-api.onrender.com/users/', {
 .then(data => console.log(data))
 ```
 
-2. /employees routes:
+#### /employees routes:
 
 1. /employess GET: the response will contain a list of all employees documents in the database.
 
