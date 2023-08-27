@@ -17,7 +17,7 @@ const app = express()
 connectToMongo()
 
 app.use(eventslogger)
-app.use(handleOptionsRequests)
+app.options(handleOptionsRequests)
 app.use(cors(corsOptions))
 
 app.use(cookieParser())
