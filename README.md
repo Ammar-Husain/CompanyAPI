@@ -16,19 +16,16 @@ Can do all CRUD operations in all employees.
 ##### 4. User (code 1998):
 Can do all CRUD operations in all employees except deleteing.
 
-
+#### Note
 ```markdown
-|      Note      |
-|:-------------:|
 | For the fields of the user document and employee document see the User and Employee Schemas in the model directory . |
 ```
 
 ### Available routes:
 
+#### Note
 ```markdown
-|      Note      |
-|:-------------:|
-| For all routes except the login, refresh and register (if there is no users) the user must be loggedin and the authorization header must contain the jwt access token. |
+| For all routes except the login, refresh and register if there is no users, the user must be loggedin and the authorization header must contain the jwt access token. |
 ```
 
 #### /users routes:
